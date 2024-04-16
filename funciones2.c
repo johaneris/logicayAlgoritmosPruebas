@@ -5,7 +5,7 @@ Decir i esta aprobado o reprobado. Un estudaidnte apeba su es mayor o igual a 70
 
 int calFinalSc(int score, int exam);
 
-int valFinalSc(int score);
+void valFinalSc(int score);
 
 void pedirNotas();
 
@@ -24,8 +24,14 @@ void pedirNotas(){
     scanf("%d", &examen);
     notaFinal = calFinalSc(acumulado, examen);
     printf("nota final %d\n", notaFinal);
+    valFinalSc(notaFinal);
 }
 
 int calFinalSc(int score, int exam){
     return score + exam;
+}
+
+void valFinalSc(int score){
+    if(score >= 70) printf("Aprobado...");
+    else printf("reprobado :(");
 }
